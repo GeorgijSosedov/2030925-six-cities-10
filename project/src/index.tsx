@@ -6,8 +6,14 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
+const Setting = {
+ ERRORS_COUNT: 3,
+};
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App
+    errorsCount= {Setting.ERRORS_COUNT} 
+    />
   </React.StrictMode>,
 );

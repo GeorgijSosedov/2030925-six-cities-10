@@ -1,9 +1,9 @@
 import WelcomeScreen from "../../pages/welcome-screen";
-
-
+import {Route,BrowserRouter,Routes} from 'react-router-dom'
+import 
 
 type AppScreenProps = {
-  errorsCount: number
+  errorsCount: number;
 };
 
 function App ({errorsCount}: AppScreenProps) {

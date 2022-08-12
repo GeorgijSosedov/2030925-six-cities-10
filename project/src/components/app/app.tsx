@@ -1,5 +1,5 @@
 import {Route,BrowserRouter,Routes, Link} from "react-router-dom";
-import {AppRoute} from "../../const";
+import {AppRoute, AuthorizationStatus} from "../../const";
 import WelcomeScreen from "../../pages/welcome-screen";
 import FavoritesEmpty from "../../pages/favorites-empty";
 import Favorites from "../../pages/favorites";
@@ -8,6 +8,7 @@ import PropertyNotLogged from '../../pages/property-not-logged';
 import Property from '../../pages/property';
 import Login from "../../pages/login";
 import { Fragment } from "react";
+import PrivateRoute from "../../components/private-route/private-route"
 
 
 type AppScreenProps = {
@@ -28,7 +29,13 @@ return (
     />
     <Route
     path={'/favorites'}
-    element={<Favorites />}
+    element={
+      <PrivateRoute
+        authorizationStatus={AuthorizationStatus.NoAuth}
+      >
+        <Favorites />
+      </PrivateRoute>
+      }
     />
     <Route
     path={'/offers/:id'}

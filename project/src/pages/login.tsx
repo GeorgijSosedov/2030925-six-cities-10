@@ -1,3 +1,5 @@
+import Logo from "../components/logo/logo";
+
 function login():JSX.Element {
     return (
   <><head /><meta charSet="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>6 cities: authorization</title><link rel="stylesheet" href="css/main.css" /><head /><body>
@@ -9,9 +11,7 @@ function login():JSX.Element {
             <div className="container">
               <div className="header__wrapper">
                 <div className="header__left">
-                  <a className="header__logo-link" href="/">
-                    <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
-                  </a>
+                  <Logo/>
                 </div>
               </div>
             </div>

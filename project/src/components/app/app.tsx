@@ -9,13 +9,15 @@ import Property from '../../pages/property';
 import Login from "../../pages/login";
 import { Fragment } from "react";
 import PrivateRoute from "../../components/private-route/private-route"
+import { offers } from './mocks/offers'
 
 
 type AppScreenProps = {
   errorsCount: number
+  offers: offers
 };
 
-function App ({errorsCount}: AppScreenProps):JSX.Element {
+function App ({errorsCount, offers}: AppScreenProps):JSX.Element {
 return ( 
  <BrowserRouter>
   <Routes>

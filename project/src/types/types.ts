@@ -1,15 +1,14 @@
-
 export type Host = {
     avatarUrl: string
-    id: number
-    name: string
+    hostId: number
+    hostName: string
     isPro: boolean
 
 }
 
 export type City = {
-    location: Location
-    name: string
+    cityLocation: Location
+    cityName: string
 }
 
 export type Location = {
@@ -38,10 +37,18 @@ location: Location
 }
 
 export type MockReview = {
-id: number,
-avatarUrl: string
+userId: number,
+userAvatarUrl: string
 user: string
-rating: number
+userRating: number
 date: string
-review: string
+userReview: string
 }
+
+export type Offer = MockOffer
+
+export type Offers = Offer[]
+
+export type Review = MockReview
+
+export type Reviews = Review[]

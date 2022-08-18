@@ -15,7 +15,7 @@ images: [
 title: 'Beautiful & luxurious hotel at great location',
 description: 'Beautiful & luxurious hotel at great location',
 isPremium: true,
-isFavorite: false,
+isFavorite: true,
 type: 'Hotel',
 rating: 4.37,
 bedrooms: 1,
@@ -36,18 +36,18 @@ goods: [
 previewImage: "https://10.react.pages.academy/static/hotel/18.jpg",
 host: {
     avatarUrl: 'img/avatar-Hotel-La-Lanterne',
-    id: 1,
-    name: 'Hotel La Lanterne',
+    hostId: 1,
+    hostName: 'Hotel La Lanterne',
     isPro: true,
 
 },
 city: {
-    location: {
+    cityLocation: {
     latitude: 51.210402,
     longitude: 6.798314,
     zoom: 16
     },
-    name: 'Paris'
+    cityName: 'Paris'
 },
 location: {
     latitude: 51.210402,
@@ -79,18 +79,18 @@ export const secondOffer: MockOffer = {
     previewImage: "https://10.react.pages.academy/static/hotel/18.jpg",
     host: {
         avatarUrl: 'img/avatar-jane.jpg',
-        id: 2,
-        name: 'Jane',
+        hostId: 2,
+        hostName: 'Jane',
         isPro: false,
     
     },
     city: {
-        location: {
+        cityLocation: {
         latitude: 52.388540000000006,
         longitude: 4.899976,
         zoom: 16,
         },
-        name: 'Brussels'
+        cityName: 'Brussels'
     },
     location: {
         latitude: 52.388540000000006,
@@ -130,18 +130,18 @@ export const thirdOffer: MockOffer = {
     previewImage: "https://10.react.pages.academy/static/hotel/18.jpg",
     host: {
         avatarUrl: 'img/avatar-tretiy-trest.jpg',
-        id: 3,
-        name: 'Tretiy Trest',
+        hostId: 3,
+        hostName: 'Tretiy Trest',
         isPro: true,
     
     },
     city: {
-        location: {
+        cityLocation: {
         latitude: 85.34592640789,
         longitude: 2.329458,
         zoom: 15,
         },
-        name: 'Hamburg'
+        cityName: 'Hamburg'
     },
     location: {
         latitude: 67.3464,
@@ -177,18 +177,18 @@ export const fourthOffer: MockOffer = {
     previewImage: "https://10.react.pages.academy/static/hotel/18.jpg",
     host: {
         avatarUrl: 'img/bbno$.jpg',
-        id: 4,
-        name: 'bbno$',
+        hostId: 4,
+        hostName: 'bbno$',
         isPro: false,
     
     },
     city: {
-        location: {
+        cityLocation: {
         latitude: 86.34598,
         longitude: 4.123049,
         zoom: 19,
         },
-        name: 'Amsterdam'
+        cityName: 'Amsterdam'
     },
     location: {
         latitude: 30.1237894,
@@ -197,7 +197,7 @@ export const fourthOffer: MockOffer = {
         }
 }
 
-export const offers = [firstOffer , secondOffer , thirdOffer , fourthOffer]
+export const offers = [firstOffer,secondOffer,thirdOffer,fourthOffer]
 
 
 

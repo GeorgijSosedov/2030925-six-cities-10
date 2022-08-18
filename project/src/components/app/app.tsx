@@ -9,15 +9,19 @@ import Property from '../../pages/property';
 import Login from "../../pages/login";
 import { Fragment } from "react";
 import PrivateRoute from "../../components/private-route/private-route"
-import { offers } from './mocks/offers'
+import {Offers,MockOffer, MockReview,Reviews} from '../../types/types'
+import { reviews } from "../../mocks/reviews";
 
 
 type AppScreenProps = {
   errorsCount: number
-  offers: offers
+  offers: Offers
+  reviews: Reviews
 };
 
-function App ({errorsCount, offers}: AppScreenProps):JSX.Element {
+function App ({errorsCount, offers,reviews}: AppScreenProps):JSX.Element {
+  const [firstOffer] = offers
+  const [firstReview] = reviews
 return ( 
  <BrowserRouter>
   <Routes>
@@ -41,7 +45,11 @@ return (
     />
     <Route
     path={'/offers/:id'}
-    element={<Property/>}
+    element={
+      <Property
+      offer ={firstOffer as MockOffer}
+      review ={firstReview as MockReview}
+    />}
     />
    <Route
 path={'*'}

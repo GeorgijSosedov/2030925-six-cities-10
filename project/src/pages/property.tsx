@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import CommentForm from "../components/comment-form/comment-form";
 import Goods from "../components/goods/goods";
-import PropertyImage from "../components/image/image";
+import PropertyImage from "../components/image-item/image-item";
 import OfferList from "../components/list/offers-list";
 import Logo from "../components/logo/logo";
 import ReviewsCard from "../components/reviews/reviews-card";
@@ -33,7 +33,9 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
   <section className="property"/>
           <div className="property__gallery-container container">
             <div className="property__gallery">
-            {currentOffer.images.map((item) => <PropertyImage key={item} image={item} />)}
+            {currentOffer.images.map((item) => 
+            <PropertyImage key={item} imageItem={item} />
+            )}
             </div>
             <div className="property__container container"/>
             <div className="property__wrapper">
@@ -46,7 +48,7 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
     }
   <div className="property__name-wrapper">
                 <h1 className="property__name">
-                  Beautiful &amp; luxurious studio at great location
+                  {currentOffer.title}
                 </h1>
                 <button className="property__bookmark-button button" type="button">
                   <svg className="property__bookmark-icon" width="31" height="33">
@@ -80,8 +82,8 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
               <div className="property__inside">
                 <h2 className="property__inside-title">What&apos;s inside</h2>
                 <ul className="property__inside-list">
-                  {currentOffer.goods.map((item)=>
-                  <Goods key={item} image={item}                  
+                  {currentOffer.goods.map((item)=>  
+                  <Goods key={item} insideItem={item}                  
                   />)}
                 </ul>
                 </div>
@@ -99,8 +101,9 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
                   <span className="property__user-status">
                     Pro
                   </span>
-                  :null
+                  : null
                   }
+                  </div>
                   <div className="property__description">
                     <p className="property__text">
                       {currentOffer.description}
@@ -126,7 +129,6 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
                 </div>
             </section>
           </div>
-        </div>
   );
 }
 export default Property;

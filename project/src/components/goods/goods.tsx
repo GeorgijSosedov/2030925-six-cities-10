@@ -1,11 +1,11 @@
 type GoodsProps = {
-    image: string
+    insideItem: string
   }
   
-  function Goods({image}: GoodsProps) : JSX.Element {
+  function Goods({insideItem}: GoodsProps) : JSX.Element {
     return (
       <div className="property__image-wrapper">
-        <img className="property__image" src={image} alt="Фото комнаты"/>
+        <img className="property__image" src={insideItem} alt="Фото комнаты"/>
       </div>
     ) ;
   }

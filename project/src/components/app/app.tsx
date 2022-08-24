@@ -9,37 +9,46 @@ import Property from '../../pages/property';
 import Login from "../../pages/login";
 import { Fragment } from "react";
 import PrivateRoute from "../../components/private-route/private-route"
+import {Offers,MockOffer} from '../../types/offer'
+import {Reviews,MockReview} from "../../types/review";
 
 
 type AppScreenProps = {
-  errorsCount: number
+  offersCount: number
+  offers: Offers
+  reviews: Reviews
 };
 
-function App ({errorsCount}: AppScreenProps):JSX.Element {
+function App({offersCount, offers,reviews}: AppScreenProps):JSX.Element {
+
 return ( 
  <BrowserRouter>
   <Routes>
     <Route
-    path={'/'}
-    element={<WelcomeScreen errorsCount={errorsCount}/>}
+    path={AppRoute.Main}
+    element={<WelcomeScreen offers={offers} offersCount={offersCount}/>}
     />
     <Route
-    path={'/login'}
+    path={AppRoute.Login}
     element={<Login />}
     />
     <Route
-    path={'/favorites'}
+    path={AppRoute.Favorites}
     element={
       <PrivateRoute
         authorizationStatus={AuthorizationStatus.NoAuth}
       >
-        <Favorites />
+        <Favorites offers={offers} />
       </PrivateRoute>
       }
     />
     <Route
-    path={'/offers/:id'}
-    element={<Property/>}
+    path={AppRoute.Room}
+    element={
+      <Property
+      offer={offers}
+      review={reviews}
+    />}
     />
    <Route
 path={'*'}

@@ -12,8 +12,8 @@ import { Offers } from "../types/offer";
 import { Reviews } from "../types/review";
 
 type OfferScreenProps = {
-  offer: Offers
-  review: Reviews
+  offers: Offers
+  reviews: Reviews
 }
 /*{offers.map((offer,id) => {
   const keyValue = `${id}-${offer.src}`
@@ -107,8 +107,7 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
                       </p>
                   </div>
             </div>
-
-            <section className="property__reviews reviews">
+              <section className="property__reviews reviews">
                   <h2 className="reviews__title">
                     Reviews &middot;
                     <span className="reviews__amount">{reviews.length}</span>

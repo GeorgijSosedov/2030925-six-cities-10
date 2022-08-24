@@ -10,7 +10,7 @@ import Login from "../../pages/login";
 import { Fragment } from "react";
 import PrivateRoute from "../../components/private-route/private-route"
 import {Offers,MockOffer} from '../../types/offer'
-import {Reviews,MockReview,} from "../../types/review";
+import {Reviews,MockReview} from "../../types/review";
 
 
 type AppScreenProps = {
@@ -25,29 +25,29 @@ return (
  <BrowserRouter>
   <Routes>
     <Route
-    path={'/'}
+    path={AppRoute.Main}
     element={<WelcomeScreen offers={offers} offersCount={offersCount}/>}
     />
     <Route
-    path={'/login'}
+    path={AppRoute.Login}
     element={<Login />}
     />
     <Route
-    path={'/favorites'}
+    path={AppRoute.Favorites}
     element={
       <PrivateRoute
-        authorizationStatus={AuthorizationStatus.Auth}
+        authorizationStatus={AuthorizationStatus.NoAuth}
       >
         <Favorites offers={offers} />
       </PrivateRoute>
       }
     />
     <Route
-    path={'/offers/:id'}
+    path={AppRoute.Room}
     element={
       <Property
-      offer ={offers}
-      review ={reviews}
+      offers={offers}
+      reviews={reviews}
     />}
     />
    <Route

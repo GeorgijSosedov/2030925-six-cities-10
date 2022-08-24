@@ -46,8 +46,8 @@ return (
     path={AppRoute.Room}
     element={
       <Property
-      offers={offers}
-      reviews={reviews}
+      offer={offers}
+      review={reviews}
     />}
     />
    <Route

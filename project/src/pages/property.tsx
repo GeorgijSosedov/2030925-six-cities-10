@@ -12,8 +12,8 @@ import { Offers } from "../types/offer";
 import { Reviews } from "../types/review";
 
 type OfferScreenProps = {
-  offers: Offers
-  reviews: Reviews
+  offer: Offers
+  review: Reviews
 }
 /*{offers.map((offer,id) => {
   const keyValue = `${id}-${offer.src}`

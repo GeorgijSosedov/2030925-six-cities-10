@@ -9,25 +9,24 @@ import Property from '../../pages/property';
 import Login from "../../pages/login";
 import { Fragment } from "react";
 import PrivateRoute from "../../components/private-route/private-route"
-import {Offers,MockOffer, MockReview,Reviews} from '../../types/types'
-import { reviews } from "../../mocks/reviews";
+import {Offers,MockOffer} from '../../types/offer'
+import {Reviews,MockReview,} from "../../types/review";
 
 
 type AppScreenProps = {
-  errorsCount: number
+  offersCount: number
   offers: Offers
   reviews: Reviews
 };
 
-function App ({errorsCount, offers,reviews}: AppScreenProps):JSX.Element {
-  const [firstOffer] = offers
-  const [firstReview] = reviews
+function App ({offersCount, offers,reviews}: AppScreenProps):JSX.Element {
+
 return ( 
  <BrowserRouter>
   <Routes>
     <Route
     path={'/'}
-    element={<WelcomeScreen errorsCount={errorsCount}/>}
+    element={<WelcomeScreen offers={offers} offersCount={offersCount}/>}
     />
     <Route
     path={'/login'}
@@ -39,7 +38,7 @@ return (
       <PrivateRoute
         authorizationStatus={AuthorizationStatus.NoAuth}
       >
-        <Favorites />
+        <Favorites offers={offers} />
       </PrivateRoute>
       }
     />
@@ -47,8 +46,8 @@ return (
     path={'/offers/:id'}
     element={
       <Property
-      offer ={firstOffer as MockOffer}
-      review ={firstReview as MockReview}
+      offer ={offers}
+      review ={reviews}
     />}
     />
    <Route

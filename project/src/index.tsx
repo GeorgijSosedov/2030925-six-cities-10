@@ -9,13 +9,13 @@ const root = ReactDOM.createRoot(
 );
 
 const Setting = {
- ERRORS_COUNT: 3,
+ OFFERS_COUNT: 3,
 };
 
 root.render(
   <React.StrictMode>
     <App
-    errorsCount= {Setting.ERRORS_COUNT} 
+    offersCount= {Setting.OFFERS_COUNT} 
     offers = {offers}
     reviews = {reviews}
     />

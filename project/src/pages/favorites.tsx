@@ -9,6 +9,7 @@ type FavoritesScreenProps = {
 function favorites({offers}: FavoritesScreenProps):JSX.Element {
     return (  
 <Fragment>
+  <Logo/>
   <div style={{display: 'none'}}>
     <svg xmlns="http://www.w3.org/2000/svg">
       <symbol id="icon-arrow-select" viewBox="0 0 7 4">

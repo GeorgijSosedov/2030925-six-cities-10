@@ -19,7 +19,7 @@ type AppScreenProps = {
   reviews: Reviews
 };
 
-function App ({offersCount, offers,reviews}: AppScreenProps):JSX.Element {
+function App({offersCount, offers,reviews}: AppScreenProps):JSX.Element {
 
 return ( 
  <BrowserRouter>
@@ -36,7 +36,7 @@ return (
     path={'/favorites'}
     element={
       <PrivateRoute
-        authorizationStatus={AuthorizationStatus.NoAuth}
+        authorizationStatus={AuthorizationStatus.Auth}
       >
         <Favorites offers={offers} />
       </PrivateRoute>

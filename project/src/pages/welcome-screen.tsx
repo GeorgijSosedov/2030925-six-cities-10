@@ -1,5 +1,6 @@
 import { useState } from "react";
 import OfferList from "../components/list/offers-list";
+import Logo from "../components/logo/logo";
 import { Offers } from "../types/offer";
 
 type WelcomeScreenProps =  {
@@ -14,6 +15,7 @@ function WelcomeScreen ({offersCount,offers}: WelcomeScreenProps): JSX.Element {
   const handleOfferCardMouseLeave = () => setActiveOfferCard(null);
     return (
       <div>
+        <Logo/>
       <div className="cities__places-container container"/>
       <section className="cities__places places"/>
         <h2 className="visually-hidden">Places</h2>

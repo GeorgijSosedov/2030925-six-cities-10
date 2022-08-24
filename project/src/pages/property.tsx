@@ -23,6 +23,7 @@ const currentOffer = offers.filter((item: { id: number; }) => item.id === offerI
 const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId);
   return(
 <div>
+  <Logo/>
   <div style={{display: 'none'}}></div>
   <section className="property"/>
           <div className="property__gallery-container container">

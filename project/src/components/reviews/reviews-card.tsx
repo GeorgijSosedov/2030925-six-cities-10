@@ -4,7 +4,7 @@ type ReviewScreenProps = {
    reviewProps:  MockReview 
 }
 
-function reviewCard({reviewProps}: ReviewScreenProps): JSX.Element {
+function ReviewsCard({reviewProps}: ReviewScreenProps): JSX.Element {
 
         return(
         <li className="reviews__item" >
@@ -32,4 +32,4 @@ function reviewCard({reviewProps}: ReviewScreenProps): JSX.Element {
         )
 }
 
-export default reviewCard
+export default ReviewsCard

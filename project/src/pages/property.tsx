@@ -1,9 +1,14 @@
-import { current } from "@reduxjs/toolkit";
 import { useParams } from "react-router-dom";
+import CommentForm from "../components/comment-form/comment-form";
 import Goods from "../components/goods/goods";
+import PropertyImage from "../components/image/image";
+import OfferList from "../components/list/offers-list";
 import Logo from "../components/logo/logo";
+import ReviewsCard from "../components/reviews/reviews-card";
+import ReviewCard from "../components/reviews/reviews-card";
 import { offers } from "../mocks/offers";
-import { MockOffer, Offers } from "../types/offer";
+import { reviews } from "../mocks/reviews";
+import { Offers } from "../types/offer";
 import { Reviews } from "../types/review";
 
 type OfferScreenProps = {
@@ -28,7 +33,7 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
   <section className="property"/>
           <div className="property__gallery-container container">
             <div className="property__gallery">
-            {currentOffer.images.map((item) => <Goods key={item} image={item} />)}
+            {currentOffer.images.map((item) => <PropertyImage key={item} image={item} />)}
             </div>
             <div className="property__container container"/>
             <div className="property__wrapper">
@@ -79,13 +84,53 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
                   <Goods key={item} image={item}                  
                   />)}
                 </ul>
-              </div>
+                </div>
+                <div className="property__host">
+                <h2 className="property__host-title">Meet the host</h2>
+                <div className="property__host-user user">
+                  <div className="property__avatar-wrapper property__avatar-wrapper--pro user__avatar-wrapper">
+                    <img className="property__avatar user__avatar" src={currentOffer.host.avatarUrl} width="74" height="74" alt="Host avatar"/>
+                  </div>
+                  <span className="property__user-name">
+                    {currentOffer.host.name}
+                  </span>
+                  {
+                  currentOffer.host.isPro ?
+                  <span className="property__user-status">
+                    Pro
+                  </span>
+                  :null
+                  }
+                  <div className="property__description">
+                    <p className="property__text">
+                      {currentOffer.description}
+                      </p>
+                  </div>
+            </div>
+
+            <section className="property__reviews reviews">
+                  <h2 className="reviews__title">
+                    Reviews &middot;
+                    <span className="reviews__amount">{reviews.length}</span>
+                  </h2>
+                  <ul className="reviews__list">
+                  {reviews.map((item) => <ReviewsCard key={item.id} reviewProps={item} />)}
+                    </ul>
+                  <CommentForm/>
+              </section>
             </div>
           </div>
+          <section className="near-places places">
+              <h2 className="near-places__title">Other places in the neighbourhood</h2>
+              <div className="near-places__list places__list">
+                <OfferList offers={otherOffers} />
+                </div>
+            </section>
+          </div>
         </div>
-)
-  }
-export default Property
+  );
+}
+export default Property;
 
 /*
    <><head /><meta charSet="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>6 cities: property</title><link rel="stylesheet" href="css/main.css"/>link

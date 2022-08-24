@@ -62,10 +62,10 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
                   {currentOffer.type}
                 </li>
                 <li className="property__feature property__feature--bedrooms">
-                  Max{currentOffer.bedrooms}Bedrooms
+                  Max {currentOffer.bedrooms} bedrooms
                 </li>
                 <li className="property__feature property__feature--adults">
-                Max{currentOffer.maxAdults}Adults
+                Max {currentOffer.maxAdults} adults
                 </li>
               </ul>
               <div className="property__price">

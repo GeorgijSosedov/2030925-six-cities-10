@@ -1,19 +1,33 @@
-import { useState } from "react";
-import OfferList from "../components/list/offers-list";
+import { Fragment, useState } from "react";
+import OfferList from "../components/offers-list/offers-list";
 import Logo from "../components/logo/logo";
-import { Offers } from "../types/offer";
+import { MockOffer, Offer,City } from "../types/offer";
+import  Map  from "../components/map/map";
+import OfferCard from "../components/card/offer-card";
 
 type WelcomeScreenProps =  {
     offersCount: number;
-    offers: Offers
+    offers: Offer
 };
 
 function WelcomeScreen ({offersCount,offers}: WelcomeScreenProps): JSX.Element {
-  const [,setActiveOfferCard] = useState<number | null>(null);
-
+  const [,setActiveOfferCard] = useState<number| null>(null);
   const handleOfferCardMouseOver = (id: number) => setActiveOfferCard(id);
   const handleOfferCardMouseLeave = () => setActiveOfferCard(null);
+/*
+const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
+const handleOfferCardMouseOver = (id: number) => {
+  const currentOffer = offers.find((offer) => offer.id === id);
+
+  setSelectedOffer(currentOffer);
+};
+
+const  handleOfferCardMouseLeave = () => {
+  setSelectedOffer(undefined);
+};
+*/
     return (
+      <div>
       <div>
       <h1 className="visually-hidden">Cities</h1>
       <div className="tabs">
@@ -72,10 +86,21 @@ function WelcomeScreen ({offersCount,offers}: WelcomeScreenProps): JSX.Element {
           </ul>
         </form>
         <div className="cities__places-list places__list tabs__content"/>
-          <OfferList offers={offers}
+          <OfferList 
+          offersCount={offersCount}
+          offers={offers}
           onOfferCardMouseOver={handleOfferCardMouseOver}
           onOfferCardMouseLeave={handleOfferCardMouseLeave}
           />
+          </div>
+          <div className="cities__right-section">
+          <section className="cities__map map">
+          <Map
+          offers={offers} 
+          selectedOffer={undefined}
+          />
+          </section>
+          </div>
           </div>
     );
 };

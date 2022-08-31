@@ -38,7 +38,7 @@ location: Location
 
 
 
-export type Offers = MockOffer[]
+export type Offer = MockOffer[]
 
 
 /* PROPERTYYYYYYYYYYYYYY

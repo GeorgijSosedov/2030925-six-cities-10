@@ -2,18 +2,18 @@ import { useParams } from "react-router-dom";
 import CommentForm from "../components/comment-form/comment-form";
 import Goods from "../components/goods/goods";
 import PropertyImage from "../components/image-item/image-item";
-import OfferList from "../components/list/offers-list";
+import OfferList from "../components/offers-list/offers-list";
 import Logo from "../components/logo/logo";
 import ReviewsCard from "../components/reviews/reviews-card";
 import ReviewCard from "../components/reviews/reviews-card";
 import { offers } from "../mocks/offers";
 import { reviews } from "../mocks/reviews";
-import { Offers } from "../types/offer";
-import { Reviews } from "../types/review";
+import { Offer } from "../types/offer";
+import { Review } from "../types/review";
 
 type OfferScreenProps = {
-  offer: Offers
-  review: Reviews
+  offer: Offer
+  review: Review
 }
 /*{offers.map((offer,id) => {
   const keyValue = `${id}-${offer.src}`
@@ -125,7 +125,7 @@ const otherOffers = offers.filter((item: { id: number; }) => item.id !== offerId
           <section className="near-places places">
               <h2 className="near-places__title">Other places in the neighbourhood</h2>
               <div className="near-places__list places__list">
-                <OfferList offers={otherOffers} />
+                <OfferList offers={otherOffers} offersCount={4} />
                 </div>
             </section>
           </div>

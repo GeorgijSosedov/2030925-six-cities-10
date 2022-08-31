@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 import FavoriteOffer from "../components/favorites/favorites-screen";
 import Logo from "../components/logo/logo";
-import { Offers } from "../types/offer";
+import { Offer } from "../types/offer";
 
 type FavoritesScreenProps = {
-  offers: Offers
+  offers: Offer
 }
 function favorites({offers}: FavoritesScreenProps):JSX.Element {
     return (  

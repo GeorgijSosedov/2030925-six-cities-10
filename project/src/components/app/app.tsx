@@ -7,16 +7,18 @@ import MainEmpty from '../../pages/main-empty';
 import PropertyNotLogged from '../../pages/property-not-logged';
 import Property from '../../pages/property';
 import Login from "../../pages/login";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import PrivateRoute from "../../components/private-route/private-route"
-import {Offers,MockOffer} from '../../types/offer'
-import {Reviews,MockReview} from "../../types/review";
+import {Offer,MockOffer} from '../../types/offer'
+import {Review,MockReview} from "../../types/review";
+import MapList from "../map-list/map-list";
+import { Map } from "leaflet";
 
 
 type AppScreenProps = {
   offersCount: number
-  offers: Offers
-  reviews: Reviews
+  offers: Offer
+  reviews: Review
 };
 
 function App({offersCount, offers,reviews}: AppScreenProps):JSX.Element {
@@ -26,7 +28,9 @@ return (
   <Routes>
     <Route
     path={AppRoute.Main}
-    element={<WelcomeScreen offers={offers} offersCount={offersCount}/>}
+    element={
+    <WelcomeScreen offers={offers} offersCount={offersCount}/>
+  }
     />
     <Route
     path={AppRoute.Login}

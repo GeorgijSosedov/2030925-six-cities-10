@@ -1,14 +1,15 @@
 import OfferCard from '../card/offer-card';
-import {Offers} from '../../types/offer';
+import {Offer} from '../../types/offer';
 import {Fragment} from 'react';
 
 type OfferListProps = {
-  offers: Offers,
+  offersCount: number
+  offers: Offer
   onOfferCardMouseOver?: (id: number) => void,
   onOfferCardMouseLeave?: () => void
 }
 
-function OfferList({offers, onOfferCardMouseOver, onOfferCardMouseLeave}: OfferListProps): JSX.Element {
+function OfferList({offers, onOfferCardMouseOver, onOfferCardMouseLeave,}: OfferListProps): JSX.Element {
   return (
     <Fragment>
       {

@@ -8,4 +8,4 @@ export type MockReview = {
     review: string
     }
 
-export type Reviews = MockReview[]
+export type Review = MockReview[]
